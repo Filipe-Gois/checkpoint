@@ -167,7 +167,7 @@ export default function Dashboard() {
 
   return (
 
-    <MainContainer styles="pl-5">
+    <main>
       <section className="p-4 justify-center flex flex-col w-full h-full">
         <div className="flex flex-col md:flex-row justify-between w-full h-max mb-4 gap-4 md:gap-0">
           <Title styles="text-center">Dashboard</Title>
@@ -247,6 +247,6 @@ export default function Dashboard() {
       {isOpenModalJustificarFalta && <ModalCalendar isOpen={isOpenModalJustificarFalta} setIsOpen={setIsOpenModalJustificarFalta} />
       }
 
-    </MainContainer >
+    </main >
   )
 }
