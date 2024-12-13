@@ -14,6 +14,7 @@ type TourProps = {
 };
 
 const TourProvider = ({ children }: TourProps) => {
+    if (typeof window === 'undefined') return children; // Garante execução apenas no cliente
     const pathname = usePathname();
     const [run, setRun] = useState(false); // Controle para iniciar o Joyride
     const [stepIndex, setStepIndex] = useState(0); // Índice do passo atual

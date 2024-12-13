@@ -8,11 +8,17 @@ import TourProvider from "./TourProvider";
 
 const Providers = ({ children }: { children: ReactNode }) => {
   return (
-    <QueryProvider>
-
-      {children}
-
-    </QueryProvider>
+    <ChakraProvider>
+      <QueryProvider>
+        <AuthProvider>
+          <AnimateProvider>
+            <TourProvider>
+              {children}
+            </TourProvider>
+          </AnimateProvider>
+        </AuthProvider>
+      </QueryProvider>
+    </ChakraProvider>
   );
 };
 
