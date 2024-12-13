@@ -1,15 +1,20 @@
-import Joyride, { CallBackProps, STATUS } from 'react-joyride';
+import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
 import AllStepsTour from '@/Utils/TourSteps';
 import ButtonHelperTour from '@/components/button/ButtonHelperTour';
 import { usePathname } from 'next/navigation';
 
+// Importação dinâmica do Joyride com SSR desativado
+const Joyride = dynamic(() => import('react-joyride'), { ssr: false });
+
+import { CallBackProps, STATUS } from 'react-joyride';
+
 type TourProps = {
-    children: React.ReactNode
-}
+    children: React.ReactNode;
+};
 
 const TourProvider = ({ children }: TourProps) => {
-    const pathname = usePathname()
+    const pathname = usePathname();
     const [run, setRun] = useState(false); // Controle para iniciar o Joyride
     const [stepIndex, setStepIndex] = useState(0); // Índice do passo atual
 
@@ -48,7 +53,6 @@ const TourProvider = ({ children }: TourProps) => {
                     next: 'Próximo',
                     skip: 'Pular',
                 }}
-                // showProgress
                 styles={{
                     options: {
                         zIndex: 10000, // Garantir que o Joyride esteja no topo
