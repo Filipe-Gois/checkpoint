@@ -1,3 +1,4 @@
+"use client";
 import { FileInput, Label } from "flowbite-react";
 import { useState } from "react";
 

@@ -1,3 +1,4 @@
+"use client";
 import { useGerarRelatorioEstagiario } from '@/hooks/estagiarioHooks/useGerarRelatorioEstagiario';
 import { FileText } from 'lucide-react';
 import React, { useState, useEffect } from 'react';

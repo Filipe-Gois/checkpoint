@@ -65,7 +65,6 @@ const JustificationCard = ({ justificativa, }: { justificativa: justificativaFal
 const ModalViewJustification = ({ isOpen, setIsOpen, }: ModalProps) => {
     const { data: justificativas } = useListarTodasAsJustificativasDeFalta();
 
-    const height = window.innerHeight;
 
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -77,7 +76,7 @@ const ModalViewJustification = ({ isOpen, setIsOpen, }: ModalProps) => {
                     <DialogDescription className="font-poppins text-lg text-center">Analise as justificativas de falta dos estagiários.</DialogDescription>
                 </DialogHeader>
                 <div className="h-full">
-                    <div style={{ maxHeight: height * 0.3 }} className={`w-full rounded-md overflow-x-hidden`}>
+                    <div className={`w-full max-h-[30%] rounded-md overflow-x-hidden`}>
                         {justificativas && justificativas.length ? (
                             justificativas.map((justificativa) => (
                                 <JustificationCard

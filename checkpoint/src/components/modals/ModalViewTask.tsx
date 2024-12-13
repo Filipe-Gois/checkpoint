@@ -125,7 +125,6 @@ export default function ModalViewTask({ isOpen, setIsOpen, tarefa }: ModalViewTa
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isSuccessCorrigirTarefa, isSuccessEntregarTarefa, isErrorCorrigirTarefa, isErrorEntregarTarefa]);
 
-    const height = window.innerHeight;
 
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -139,7 +138,7 @@ export default function ModalViewTask({ isOpen, setIsOpen, tarefa }: ModalViewTa
                     className="flex w-full h-full flex-col justify-center px-2 gap-4"
                     onSubmit={handleSubmit(submitForm)}
                 >
-                    <div style={{ maxHeight: height * 0.4 }} className={`w-full flex flex-col px-2 rounded-md overflow-x-hidden`}>
+                    <div className={`w-full max-h-[60%] flex flex-col px-2 rounded-md overflow-x-hidden`}>
                         {isEstagiario && tarefa?.status === "Pendente" ?
                             <FormControl isInvalid={!!errors.arquivosDeImagens?.message}>
                                 <Dropzone totalArquivos={arquivos ? arquivos.length : 0} onFilesChange={(files) => setValue("arquivosDeImagens", files)} />
