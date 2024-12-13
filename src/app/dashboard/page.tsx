@@ -164,9 +164,7 @@ export default function Dashboard() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
   return (
-
     <MainContainer styles="pl-5">
       <section className="p-4 justify-center flex flex-col w-full h-full">
         <div className="flex flex-col md:flex-row justify-between w-full h-max mb-4 gap-4 md:gap-0">
