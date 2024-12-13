@@ -1,0 +1,60 @@
+-- CALENDARIO
+DECLARE @dataInicio DATE = DATEADD(MONTH, -6, GETDATE());
+DECLARE @dataAtual DATE = @dataInicio;
+
+WHILE @dataAtual <= GETDATE()
+BEGIN
+    IF DATEPART(WEEKDAY, @dataAtual) NOT IN (1, 7) -- Ignorar fins de semana (domingo e sábado)
+    BEGIN
+        INSERT INTO CalendarioLetivo (IdCalendarioLetivo, Data, IsDiaLetivo)
+        VALUES (NEWID(), @dataAtual, 1);
+    END
+    SET @dataAtual = DATEADD(DAY, 1, @dataAtual);
+END
+
+
+-- Inserindo presenças para o estagiário nos últimos 6 meses
+DECLARE @dataInicio DATE = DATEADD(MONTH, -6, GETDATE());
+DECLARE @dataAtual DATE = @dataInicio;
+
+DECLARE @idEstagiario UNIQUEIDENTIFIER = '568b484e-f546-4ef3-952a-c3ff13b33eb0';
+
+WHILE @dataAtual <= GETDATE()
+BEGIN
+    -- Obter IdCalendarioLetivo para o dia
+    DECLARE @idCalendarioLetivo UNIQUEIDENTIFIER;
+    SELECT TOP 1 @idCalendarioLetivo = IdCalendarioLetivo
+    FROM CalendarioLetivo
+    WHERE Data = @dataAtual;
+
+    -- Inserir presença para dias letivos
+    IF @idCalendarioLetivo IS NOT NULL
+    BEGIN
+        -- Alternar entre diferentes tipos de presença
+        DECLARE @tipoPresenca INT = ABS(CHECKSUM(NEWID())) % 3;
+
+        IF @tipoPresenca = 0 -- Presença normal
+        BEGIN
+            INSERT INTO Presenca (IdPresenca, HorarioEntrada, HorarioSaida, IdEstagiario, IdCalendarioLetivo)
+            VALUES (NEWID(), '09:00:00', '18:00:00', @idEstagiario, @idCalendarioLetivo);
+        END
+        ELSE IF @tipoPresenca = 1 -- Falta
+        BEGIN
+            INSERT INTO Presenca (IdPresenca, HorarioEntrada, HorarioSaida, IdEstagiario, IdCalendarioLetivo)
+            VALUES (NEWID(), NULL, NULL, @idEstagiario, @idCalendarioLetivo);
+        END
+        ELSE IF @tipoPresenca = 2 -- Atraso
+        BEGIN
+            -- Gerar atraso aleatório (mínimo 5 min e 1 seg)
+            DECLARE @minutosAtraso INT = ABS(CHECKSUM(NEWID())) % 55 + 5; -- Aleatório entre 5 e 59 minutos
+            DECLARE @segundosAtraso INT = ABS(CHECKSUM(NEWID())) % 60; -- Aleatório entre 0 e 59 segundos
+
+            DECLARE @horarioEntrada TIME = DATEADD(SECOND, (@minutosAtraso * 60) + @segundosAtraso, CAST('09:00:00' AS TIME));
+
+            INSERT INTO Presenca (IdPresenca, HorarioEntrada, HorarioSaida, IdEstagiario, IdCalendarioLetivo)
+            VALUES (NEWID(), @horarioEntrada, '18:00:00', @idEstagiario, @idCalendarioLetivo);
+        END
+    END
+
+    SET @dataAtual = DATEADD(DAY, 1, @dataAtual);
+END

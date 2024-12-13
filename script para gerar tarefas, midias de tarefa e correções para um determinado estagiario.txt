@@ -1,0 +1,24 @@
+-- Inserir tarefas para o estagiário com ID especificado
+INSERT INTO Tarefa (IdTarefa, Titulo, Descricao, DescricaoCorrecao, Prazo, Dificuldade, StatusCorrecao, IdEstagiario)
+VALUES 
+    ('7f2c1c5c-1e57-41c6-a9b4-d68c5a6a1f71', 'Implementar CRUD', 'Criar CRUD completo para gerenciar usuários.', NULL, '2024-10-05', 25, 1, '568b484e-f546-4ef3-952a-c3ff13b33eb0'),
+    ('9b23a50e-7c41-4f21-9d1e-2b45f3e245d6', 'Corrigir bugs no sistema', 'Resolver problemas de validação no formulário de login.', 'Analisar input e ajustar mensagens de erro.', '2024-10-10', 50, 3, '568b484e-f546-4ef3-952a-c3ff13b33eb0'),
+    ('a723fe25-f2e1-4d6c-b807-8c0f7b4a8e64', 'Escrever documentação', 'Documentar as funcionalidades da API de autenticação.', NULL, '2024-10-15', 10, 0, '568b484e-f546-4ef3-952a-c3ff13b33eb0'),
+    ('c83a57db-9db0-472e-87d1-1d06ed7352a2', 'Criar testes unitários', 'Desenvolver testes para garantir a estabilidade do sistema.', NULL, '2024-10-20', 25, 2, '568b484e-f546-4ef3-952a-c3ff13b33eb0');
+
+
+-- Inserir mídias relacionadas às tarefas criadas
+INSERT INTO Midia (IdMidia, Url, BlobStorageName)
+VALUES
+    ('fa21bcde-d5d6-4a5e-8c4e-3b7b12b4c5f1', 'https://blobcheckpointgabriel.blob.core.windows.net/containercheckpoint/c52eaa6a61c64066acff95dc251a1a9f.png', 'media_task_1'),
+    ('abc53d2e-18d8-45fb-946e-7c4a53b2f6e8', 'https://blobcheckpointgabriel.blob.core.windows.net/containercheckpoint/c52eaa6a61c64066acff95dc251a1a9f.png', 'media_task_2'),
+    ('df16a42b-f6e9-40fa-9f23-2e5f4b2b7a3d', 'https://blobcheckpointgabriel.blob.core.windows.net/containercheckpoint/c52eaa6a61c64066acff95dc251a1a9f.png', 'media_task_3'),
+    ('e87234bd-b2c6-47ec-83fe-9b7e62c4b3a7', 'https://blobcheckpointgabriel.blob.core.windows.net/containercheckpoint/c52eaa6a61c64066acff95dc251a1a9f.png', 'media_task_4');
+
+-- Relacionar mídias às tarefas
+INSERT INTO TarefaMidia (IdTarefaMidia, IdMidia, IdTarefa)
+VALUES
+    ('1c3a572e-a7d1-4a5e-8b6c-7d6a53b7e9f3', 'fa21bcde-d5d6-4a5e-8c4e-3b7b12b4c5f1', '7f2c1c5c-1e57-41c6-a9b4-d68c5a6a1f71'),
+    ('2b5f42d8-f7d2-4b6f-9e3f-6d4c7a3e5f6e', 'abc53d2e-18d8-45fb-946e-7c4a53b2f6e8', '9b23a50e-7c41-4f21-9d1e-2b45f3e245d6'),
+    ('3f4e72b6-d8e3-4b5e-8a6d-7f3e52d6a4e7', 'df16a42b-f6e9-40fa-9f23-2e5f4b2b7a3d', 'a723fe25-f2e1-4d6c-b807-8c0f7b4a8e64'),
+    ('4e8b72f6-b9e4-4c6f-8d7e-9a6f7b3e5c4a', 'e87234bd-b2c6-47ec-83fe-9b7e62c4b3a7', 'c83a57db-9db0-472e-87d1-1d06ed7352a2');
