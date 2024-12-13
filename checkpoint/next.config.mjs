@@ -4,9 +4,6 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
-  experimental: {
-    appDir: true,
-  },
 
   //configuração para permitir que o Next/image renderize imagens vindas do google
   images: {
