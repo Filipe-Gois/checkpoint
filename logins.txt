@@ -1,0 +1,12 @@
+adm:
+fythoy@gmail.com
+12345
+
+
+gestor:
+gabrielhenrique@gmail.com
+12345
+
+estagiario
+felipeoliveira@example.com
+felipe1234

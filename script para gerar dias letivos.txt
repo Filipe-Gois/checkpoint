@@ -1,0 +1,13 @@
+-- Inserir dias letivos dos últimos 6 meses
+DECLARE @DataAtual DATE = GETDATE();
+DECLARE @DataInicial DATE = DATEADD(MONTH, -6, @DataAtual);
+
+WHILE @DataInicial <= @DataAtual
+BEGIN
+    IF DATEPART(WEEKDAY, @DataInicial) NOT IN (1, 7) -- 1: Domingo, 7: Sábado
+    BEGIN
+        INSERT INTO CalendarioLetivo (IdCalendarioLetivo, Data, IsDiaLetivo)
+        VALUES (NEWID(), @DataInicial, 1);
+    END
+    SET @DataInicial = DATEADD(DAY, 1, @DataInicial);
+END

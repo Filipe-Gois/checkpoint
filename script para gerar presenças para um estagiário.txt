@@ -1,0 +1,114 @@
+DECLARE @Estagiarios TABLE (IdEstagiario UNIQUEIDENTIFIER);
+DECLARE @IdEstagiario UNIQUEIDENTIFIER;
+DECLARE @InicioExpediente TIME = '09:00:00';
+DECLARE @FimExpediente TIME = '18:00:00';
+DECLARE @ToleranciaAtraso TIME = '09:05:01';
+
+DECLARE @DiasLetivos TABLE (
+    IdCalendarioLetivo UNIQUEIDENTIFIER,
+    Data DATE
+);
+
+-- Inserir os IDs dos estagiários
+INSERT INTO @Estagiarios (IdEstagiario)
+VALUES
+    ('7fea49c8-d667-4a27-aa70-011a42299261'),
+    ('2228288d-2375-4f53-a65d-01c56eb8af4e'),
+    ('1a67103b-f9f9-4d67-a5e7-158e7312e408'),
+    ('e4e1f5ec-4525-47b0-b1ce-25528f6ba1ed'),
+    ('053234f1-24a2-40d4-a100-39b0dabd8116'),
+    ('7120c04e-8152-4f15-872c-3b2a5b57364d'),
+    ('dc9edd36-9de1-4796-ae04-44815e5d22a1'),
+    ('d4448bfd-a22d-4ae7-b909-46243176100d'),
+    ('cb424706-249b-49e7-8a7b-56c1bc1b08e0'),
+    ('4ead3bb4-983b-4255-972b-6b746654ce0c'),
+    ('d5a6aa09-33e8-4eaf-a73d-7c85fadb5ed4'),
+    ('c4ca5a97-285a-43a2-ac4f-830a0d9c5ea2'),
+    ('8f7956b8-c6ba-42b2-8c19-b28cfe725eff'),
+    ('a3bd6f61-a713-4192-9427-b9b6ea41105a'),
+    ('00cb6709-5526-42c5-86a0-df6743ab5929'),
+    ('969e5ea4-a221-49cc-bdaf-e1fa2b27d9f7'),
+    ('6426b867-3e41-41e6-87c4-ef8a03860933'),
+    ('c8569fda-9cac-49d9-9351-fbc49df34c72'),
+    ('87a99c81-6241-447b-bc22-fd5ba3e65065');
+
+-- Obter dias letivos
+INSERT INTO @DiasLetivos (IdCalendarioLetivo, Data)
+SELECT IdCalendarioLetivo, Data
+FROM CalendarioLetivo
+WHERE IsDiaLetivo = 1 AND Data BETWEEN DATEADD(MONTH, -6, GETDATE()) AND GETDATE();
+
+-- Loop para cada estagiário
+DECLARE CurEstagiarios CURSOR FOR
+SELECT IdEstagiario FROM @Estagiarios;
+
+OPEN CurEstagiarios;
+FETCH NEXT FROM CurEstagiarios INTO @IdEstagiario;
+
+WHILE @@FETCH_STATUS = 0
+BEGIN
+    -- Loop para os dias letivos
+    DECLARE @Data DATE;
+    DECLARE @IdCalendarioLetivo UNIQUEIDENTIFIER;
+    DECLARE @Random INT;
+    DECLARE Cur CURSOR FOR
+    SELECT IdCalendarioLetivo, Data FROM @DiasLetivos;
+
+    OPEN Cur;
+    FETCH NEXT FROM Cur INTO @IdCalendarioLetivo, @Data;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Gerar aleatoriamente o tipo de presença
+        SET @Random = ABS(CHECKSUM(NEWID())) % 4; -- Valores entre 0 e 3
+
+        IF @Random = 0 -- Simular falta (entrada e saída nulas)
+        BEGIN
+            INSERT INTO Presenca (IdPresenca, HorarioEntrada, HorarioSaida, IdEstagiario, IdCalendarioLetivo)
+            VALUES (NEWID(), NULL, NULL, @IdEstagiario, @IdCalendarioLetivo);
+        END
+        ELSE IF @Random = 1 -- Entrada dentro do horário tolerado (sem atraso)
+        BEGIN
+            INSERT INTO Presenca (IdPresenca, HorarioEntrada, HorarioSaida, IdEstagiario, IdCalendarioLetivo)
+            VALUES (
+                NEWID(),
+                DATEADD(SECOND, ABS(CHECKSUM(NEWID())) % 301, @InicioExpediente), -- 0 a 5 minutos após 09:00:00
+                @FimExpediente,
+                @IdEstagiario,
+                @IdCalendarioLetivo
+            );
+        END
+        ELSE IF @Random = 2 -- Entrada com atraso
+        BEGIN
+            INSERT INTO Presenca (IdPresenca, HorarioEntrada, HorarioSaida, IdEstagiario, IdCalendarioLetivo)
+            VALUES (
+                NEWID(),
+                DATEADD(SECOND, ABS(CHECKSUM(NEWID())) % 1800 + 301, @InicioExpediente), -- Mais de 5 minutos após 09:00:00
+                @FimExpediente,
+                @IdEstagiario,
+                @IdCalendarioLetivo
+            );
+        END
+        ELSE -- Presença completa sem atraso
+        BEGIN
+            INSERT INTO Presenca (IdPresenca, HorarioEntrada, HorarioSaida, IdEstagiario, IdCalendarioLetivo)
+            VALUES (
+                NEWID(),
+                @InicioExpediente,
+                @FimExpediente,
+                @IdEstagiario,
+                @IdCalendarioLetivo
+            );
+        END
+
+        FETCH NEXT FROM Cur INTO @IdCalendarioLetivo, @Data;
+    END
+
+    CLOSE Cur;
+    DEALLOCATE Cur;
+
+    FETCH NEXT FROM CurEstagiarios INTO @IdEstagiario;
+END
+
+CLOSE CurEstagiarios;
+DEALLOCATE CurEstagiarios;

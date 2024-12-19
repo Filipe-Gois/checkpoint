@@ -1,0 +1,534 @@
+[
+  {
+    "gestores": [
+      {
+        "idUsuario": "159bd5b5-2b1d-410a-8a1b-91ff29afe2d2",
+        "nome": "Gabriel",
+        "sobreNome": "Henrique",
+        "emailPessoal": "gabrielhenrique@gmail.com",
+        "emailCorporativo": "gabrielhenrique@gmail.com",
+        "role": "Gestor",
+        "isActive": true
+      }
+    ],
+    "estagiarios": [
+      {
+        "presencas": {
+          "diasLetivos": 130,
+          "totalPresencas": 71,
+          "totalFaltas": 28,
+          "totalAtrasos": 31,
+          "totalSaidasAntesDoFimDoExpediente": 0
+        },
+        "inicioExpediente": "09:00:00",
+        "fimExpediente": "18:00:00",
+        "matrícula": "702407",
+        "idEstagiario": "7120c04e-8152-4f15-872c-3b2a5b57364d",
+        "nome": "Gustavo",
+        "sobreNome": "Miguel",
+        "estagiariosPontuacao": []
+      },
+      {
+        "presencas": {
+          "diasLetivos": 130,
+          "totalPresencas": 60,
+          "totalFaltas": 37,
+          "totalAtrasos": 33,
+          "totalSaidasAntesDoFimDoExpediente": 0
+        },
+        "inicioExpediente": "09:00:00",
+        "fimExpediente": "18:00:00",
+        "matrícula": "141885",
+        "idEstagiario": "dc9edd36-9de1-4796-ae04-44815e5d22a1",
+        "nome": "Gustavo",
+        "sobreNome": "Almeida",
+        "estagiariosPontuacao": []
+      }
+    ],
+    "idSquad": "703624b6-f244-417f-8be9-89bc3341328a",
+    "nome": "Squad de desenvolvimento"
+  },
+  {
+    "gestores": [
+      {
+        "idUsuario": "b819e21b-1679-42fa-b882-3b28f8a6e699",
+        "nome": "Mikael",
+        "sobreNome": "Souza",
+        "emailPessoal": "Mikael@gmail.com",
+        "emailCorporativo": "Mikael@gmail.com",
+        "role": "Gestor",
+        "isActive": true
+      },
+      {
+        "idUsuario": "048fc072-ea97-4d00-bab9-f51d4a4d7449",
+        "nome": "Guilherme",
+        "sobreNome": "Matos",
+        "emailPessoal": "guilhermematos@gmail.com",
+        "emailCorporativo": "guilhermematos@gmail.com",
+        "role": "Gestor",
+        "isActive": true
+      }
+    ],
+    "estagiarios": [
+      {
+        "presencas": {
+          "diasLetivos": 130,
+          "totalPresencas": 66,
+          "totalFaltas": 31,
+          "totalAtrasos": 33,
+          "totalSaidasAntesDoFimDoExpediente": 0
+        },
+        "inicioExpediente": "09:00:00",
+        "fimExpediente": "18:00:00",
+        "matrícula": "604164",
+        "idEstagiario": "c4ca5a97-285a-43a2-ac4f-830a0d9c5ea2",
+        "nome": "Rodrigo",
+        "sobreNome": "Santos de Oliveira",
+        "estagiariosPontuacao": []
+      }
+    ],
+    "idSquad": "7bd9894e-b027-4d75-8765-a86eca3756a9",
+    "nome": "Squad de DevOps"
+  },
+  {
+    "gestores": [
+      {
+        "idUsuario": "e0206290-8b33-4893-b474-f81c95991f52",
+        "nome": "Ricardo",
+        "sobreNome": "Gomes Martins",
+        "emailPessoal": "ricardogomes@example.com",
+        "emailCorporativo": "ricardo.gomes@empresa.com",
+        "role": "Gestor",
+        "isActive": true
+      },
+      {
+        "idUsuario": "159bd5b5-2b1d-410a-8a1b-91ff29afe2d2",
+        "nome": "Gabriel",
+        "sobreNome": "Henrique",
+        "emailPessoal": "gabrielhenrique@gmail.com",
+        "emailCorporativo": "gabrielhenrique@gmail.com",
+        "role": "Gestor",
+        "isActive": true
+      }
+    ],
+    "estagiarios": [
+      {
+        "presencas": {
+          "diasLetivos": 130,
+          "totalPresencas": 62,
+          "totalFaltas": 34,
+          "totalAtrasos": 34,
+          "totalSaidasAntesDoFimDoExpediente": 0
+        },
+        "inicioExpediente": "09:00:00",
+        "fimExpediente": "18:00:00",
+        "matrícula": "144531",
+        "idEstagiario": "8f7956b8-c6ba-42b2-8c19-b28cfe725eff",
+        "nome": "Murilo",
+        "sobreNome": "Alves",
+        "estagiariosPontuacao": []
+      },
+      {
+        "presencas": {
+          "diasLetivos": 130,
+          "totalPresencas": 71,
+          "totalFaltas": 24,
+          "totalAtrasos": 35,
+          "totalSaidasAntesDoFimDoExpediente": 0
+        },
+        "inicioExpediente": "09:00:00",
+        "fimExpediente": "18:00:00",
+        "matrícula": "801788",
+        "idEstagiario": "969e5ea4-a221-49cc-bdaf-e1fa2b27d9f7",
+        "nome": "Rodrigo",
+        "sobreNome": "Alves Rocha",
+        "estagiariosPontuacao": []
+      },
+      {
+        "presencas": {
+          "diasLetivos": 130,
+          "totalPresencas": 69,
+          "totalFaltas": 30,
+          "totalAtrasos": 31,
+          "totalSaidasAntesDoFimDoExpediente": 0
+        },
+        "inicioExpediente": "09:00:00",
+        "fimExpediente": "18:00:00",
+        "matrícula": "698070",
+        "idEstagiario": "6426b867-3e41-41e6-87c4-ef8a03860933",
+        "nome": "Ricardo",
+        "sobreNome": "Lima Santos",
+        "estagiariosPontuacao": []
+      }
+    ],
+    "idSquad": "2a0a2013-509d-43f6-9fba-934306b4abaa",
+    "nome": "Squad de Design"
+  },
+  {
+    "gestores": [
+      {
+        "idUsuario": "159bd5b5-2b1d-410a-8a1b-91ff29afe2d2",
+        "nome": "Gabriel",
+        "sobreNome": "Henrique",
+        "emailPessoal": "gabrielhenrique@gmail.com",
+        "emailCorporativo": "gabrielhenrique@gmail.com",
+        "role": "Gestor",
+        "isActive": true
+      },
+      {
+        "idUsuario": "1f30295b-6e11-4632-b5be-0b4968678f41",
+        "nome": "Beatriz",
+        "sobreNome": "Rocha Alves",
+        "emailPessoal": "beatrizrocha@example.com",
+        "emailCorporativo": "beatriz.rocha@empresa.com",
+        "role": "Gestor",
+        "isActive": true
+      }
+    ],
+    "estagiarios": [
+      {
+        "presencas": {
+          "diasLetivos": 130,
+          "totalPresencas": 65,
+          "totalFaltas": 27,
+          "totalAtrasos": 38,
+          "totalSaidasAntesDoFimDoExpediente": 0
+        },
+        "inicioExpediente": "09:00:00",
+        "fimExpediente": "18:00:00",
+        "matrícula": "288127",
+        "idEstagiario": "7fea49c8-d667-4a27-aa70-011a42299261",
+        "nome": "Juliana",
+        "sobreNome": "Santos Carvalho",
+        "estagiariosPontuacao": []
+      },
+      {
+        "presencas": {
+          "diasLetivos": 130,
+          "totalPresencas": 61,
+          "totalFaltas": 31,
+          "totalAtrasos": 38,
+          "totalSaidasAntesDoFimDoExpediente": 0
+        },
+        "inicioExpediente": "09:00:00",
+        "fimExpediente": "18:00:00",
+        "matrícula": "333001",
+        "idEstagiario": "2228288d-2375-4f53-a65d-01c56eb8af4e",
+        "nome": "Lucas",
+        "sobreNome": "Pereira Rocha",
+        "estagiariosPontuacao": [
+          {
+            "idSquad": "fde71eda-7b09-433f-beea-f33892f614ab",
+            "idEstagiario": "2228288d-2375-4f53-a65d-01c56eb8af4e",
+            "mes": 11,
+            "ano": 2024,
+            "nome": "Lucas",
+            "sobreNome": "Pereira Rocha",
+            "pontuacaoTotal": 10
+          },
+          {
+            "idSquad": "fde71eda-7b09-433f-beea-f33892f614ab",
+            "idEstagiario": "2228288d-2375-4f53-a65d-01c56eb8af4e",
+            "mes": 12,
+            "ano": 2024,
+            "nome": "Lucas",
+            "sobreNome": "Pereira Rocha",
+            "pontuacaoTotal": 375
+          }
+        ]
+      },
+      {
+        "presencas": {
+          "diasLetivos": 130,
+          "totalPresencas": 54,
+          "totalFaltas": 34,
+          "totalAtrasos": 42,
+          "totalSaidasAntesDoFimDoExpediente": 0
+        },
+        "inicioExpediente": "09:00:00",
+        "fimExpediente": "18:00:00",
+        "matrícula": "377050",
+        "idEstagiario": "1a67103b-f9f9-4d67-a5e7-158e7312e408",
+        "nome": "Bruna",
+        "sobreNome": "Gomes Pereira",
+        "estagiariosPontuacao": [
+          {
+            "idSquad": "fde71eda-7b09-433f-beea-f33892f614ab",
+            "idEstagiario": "1a67103b-f9f9-4d67-a5e7-158e7312e408",
+            "mes": 12,
+            "ano": 2024,
+            "nome": "Bruna",
+            "sobreNome": "Gomes Pereira",
+            "pontuacaoTotal": 25
+          }
+        ]
+      }
+    ],
+    "idSquad": "fde71eda-7b09-433f-beea-f33892f614ab",
+    "nome": "Banco de dados"
+  },
+  {
+    "gestores": [
+      {
+        "idUsuario": "4b736edf-9101-456f-b6da-2c2a6d0e1ef2",
+        "nome": "Tatiane",
+        "sobreNome": "Alves Costa",
+        "emailPessoal": "tatianealves@example.com",
+        "emailCorporativo": "tatiane.alves@empresa.com",
+        "role": "Gestor",
+        "isActive": true
+      },
+      {
+        "idUsuario": "c482d53e-791a-48c7-90e8-e48d38709ba5",
+        "nome": "Sérgio",
+        "sobreNome": "Lima Souza",
+        "emailPessoal": "sergiolima@example.com",
+        "emailCorporativo": "sergio.lima@empresa.com",
+        "role": "Gestor",
+        "isActive": true
+      },
+      {
+        "idUsuario": "159bd5b5-2b1d-410a-8a1b-91ff29afe2d2",
+        "nome": "Gabriel",
+        "sobreNome": "Henrique",
+        "emailPessoal": "gabrielhenrique@gmail.com",
+        "emailCorporativo": "gabrielhenrique@gmail.com",
+        "role": "Gestor",
+        "isActive": true
+      }
+    ],
+    "estagiarios": [
+      {
+        "presencas": {
+          "diasLetivos": 130,
+          "totalPresencas": 59,
+          "totalFaltas": 40,
+          "totalAtrasos": 31,
+          "totalSaidasAntesDoFimDoExpediente": 0
+        },
+        "inicioExpediente": "09:00:00",
+        "fimExpediente": "18:00:00",
+        "matrícula": "761134",
+        "idEstagiario": "cb424706-249b-49e7-8a7b-56c1bc1b08e0",
+        "nome": "Ana",
+        "sobreNome": "Costa Oliveira",
+        "estagiariosPontuacao": [
+          {
+            "idSquad": "7bf6a257-dca9-44a9-bf5a-5053e99ab73b",
+            "idEstagiario": "cb424706-249b-49e7-8a7b-56c1bc1b08e0",
+            "mes": 12,
+            "ano": 2024,
+            "nome": "Ana",
+            "sobreNome": "Costa Oliveira",
+            "pontuacaoTotal": 20
+          }
+        ]
+      },
+      {
+        "presencas": {
+          "diasLetivos": 130,
+          "totalPresencas": 75,
+          "totalFaltas": 16,
+          "totalAtrasos": 39,
+          "totalSaidasAntesDoFimDoExpediente": 0
+        },
+        "inicioExpediente": "09:00:00",
+        "fimExpediente": "18:00:00",
+        "matrícula": "579246",
+        "idEstagiario": "4ead3bb4-983b-4255-972b-6b746654ce0c",
+        "nome": "Mariana",
+        "sobreNome": "Costa Fernandes",
+        "estagiariosPontuacao": [
+          {
+            "idSquad": "7bf6a257-dca9-44a9-bf5a-5053e99ab73b",
+            "idEstagiario": "4ead3bb4-983b-4255-972b-6b746654ce0c",
+            "mes": 12,
+            "ano": 2024,
+            "nome": "Mariana",
+            "sobreNome": "Costa Fernandes",
+            "pontuacaoTotal": 50
+          }
+        ]
+      },
+      {
+        "presencas": {
+          "diasLetivos": 130,
+          "totalPresencas": 61,
+          "totalFaltas": 35,
+          "totalAtrasos": 34,
+          "totalSaidasAntesDoFimDoExpediente": 0
+        },
+        "inicioExpediente": "09:00:00",
+        "fimExpediente": "18:00:00",
+        "matrícula": "253712",
+        "idEstagiario": "d5a6aa09-33e8-4eaf-a73d-7c85fadb5ed4",
+        "nome": "Felipe",
+        "sobreNome": "Oliveira Pereira",
+        "estagiariosPontuacao": [
+          {
+            "idSquad": "7bf6a257-dca9-44a9-bf5a-5053e99ab73b",
+            "idEstagiario": "d5a6aa09-33e8-4eaf-a73d-7c85fadb5ed4",
+            "mes": 8,
+            "ano": 2024,
+            "nome": "Felipe",
+            "sobreNome": "Oliveira Pereira",
+            "pontuacaoTotal": 125
+          },
+          {
+            "idSquad": "7bf6a257-dca9-44a9-bf5a-5053e99ab73b",
+            "idEstagiario": "d5a6aa09-33e8-4eaf-a73d-7c85fadb5ed4",
+            "mes": 10,
+            "ano": 2024,
+            "nome": "Felipe",
+            "sobreNome": "Oliveira Pereira",
+            "pontuacaoTotal": 125
+          },
+          {
+            "idSquad": "7bf6a257-dca9-44a9-bf5a-5053e99ab73b",
+            "idEstagiario": "d5a6aa09-33e8-4eaf-a73d-7c85fadb5ed4",
+            "mes": 11,
+            "ano": 2024,
+            "nome": "Felipe",
+            "sobreNome": "Oliveira Pereira",
+            "pontuacaoTotal": 150
+          },
+          {
+            "idSquad": "7bf6a257-dca9-44a9-bf5a-5053e99ab73b",
+            "idEstagiario": "d5a6aa09-33e8-4eaf-a73d-7c85fadb5ed4",
+            "mes": 12,
+            "ano": 2024,
+            "nome": "Felipe",
+            "sobreNome": "Oliveira Pereira",
+            "pontuacaoTotal": 110
+          }
+        ]
+      },
+      {
+        "presencas": {
+          "diasLetivos": 130,
+          "totalPresencas": 68,
+          "totalFaltas": 29,
+          "totalAtrasos": 33,
+          "totalSaidasAntesDoFimDoExpediente": 0
+        },
+        "inicioExpediente": "09:00:00",
+        "fimExpediente": "18:00:00",
+        "matrícula": "849637",
+        "idEstagiario": "a3bd6f61-a713-4192-9427-b9b6ea41105a",
+        "nome": "Renata",
+        "sobreNome": "Silva Martins",
+        "estagiariosPontuacao": []
+      },
+      {
+        "presencas": {
+          "diasLetivos": 130,
+          "totalPresencas": 69,
+          "totalFaltas": 31,
+          "totalAtrasos": 30,
+          "totalSaidasAntesDoFimDoExpediente": 0
+        },
+        "inicioExpediente": "09:00:00",
+        "fimExpediente": "18:00:00",
+        "matrícula": "440357",
+        "idEstagiario": "00cb6709-5526-42c5-86a0-df6743ab5929",
+        "nome": "Pedro",
+        "sobreNome": "Martins Silva",
+        "estagiariosPontuacao": [
+          {
+            "idSquad": "7bf6a257-dca9-44a9-bf5a-5053e99ab73b",
+            "idEstagiario": "00cb6709-5526-42c5-86a0-df6743ab5929",
+            "mes": 12,
+            "ano": 2024,
+            "nome": "Pedro",
+            "sobreNome": "Martins Silva",
+            "pontuacaoTotal": 50
+          }
+        ]
+      }
+    ],
+    "idSquad": "7bf6a257-dca9-44a9-bf5a-5053e99ab73b",
+    "nome": "Front-end"
+  },
+  {
+    "gestores": [
+      {
+        "idUsuario": "7dc01330-9ac5-4be6-ad59-22397e670b4d",
+        "nome": "André",
+        "sobreNome": "Santos Pereira",
+        "emailPessoal": "andresantos@example.com",
+        "emailCorporativo": "andre.santos@empresa.com",
+        "role": "Gestor",
+        "isActive": true
+      }
+    ],
+    "estagiarios": [
+      {
+        "presencas": {
+          "diasLetivos": 130,
+          "totalPresencas": 57,
+          "totalFaltas": 37,
+          "totalAtrasos": 36,
+          "totalSaidasAntesDoFimDoExpediente": 0
+        },
+        "inicioExpediente": "09:00:00",
+        "fimExpediente": "18:00:00",
+        "matrícula": "302577",
+        "idEstagiario": "e4e1f5ec-4525-47b0-b1ce-25528f6ba1ed",
+        "nome": "Gabriel",
+        "sobreNome": "Nascimento Souza",
+        "estagiariosPontuacao": []
+      },
+      {
+        "presencas": {
+          "diasLetivos": 130,
+          "totalPresencas": 71,
+          "totalFaltas": 34,
+          "totalAtrasos": 25,
+          "totalSaidasAntesDoFimDoExpediente": 0
+        },
+        "inicioExpediente": "09:00:00",
+        "fimExpediente": "18:00:00",
+        "matrícula": "503192",
+        "idEstagiario": "053234f1-24a2-40d4-a100-39b0dabd8116",
+        "nome": "Carlos",
+        "sobreNome": "Almeida Souza",
+        "estagiariosPontuacao": []
+      }
+    ],
+    "idSquad": "b211fe2e-7a9e-4b53-a86d-81df2cb64975",
+    "nome": "Back-end"
+  },
+  {
+    "gestores": [
+      {
+        "idUsuario": "159bd5b5-2b1d-410a-8a1b-91ff29afe2d2",
+        "nome": "Gabriel",
+        "sobreNome": "Henrique",
+        "emailPessoal": "gabrielhenrique@gmail.com",
+        "emailCorporativo": "gabrielhenrique@gmail.com",
+        "role": "Gestor",
+        "isActive": true
+      }
+    ],
+    "estagiarios": [
+      {
+        "presencas": {
+          "diasLetivos": 130,
+          "totalPresencas": 66,
+          "totalFaltas": 31,
+          "totalAtrasos": 33,
+          "totalSaidasAntesDoFimDoExpediente": 0
+        },
+        "inicioExpediente": "09:00:00",
+        "fimExpediente": "18:00:00",
+        "matrícula": "543680",
+        "idEstagiario": "d4448bfd-a22d-4ae7-b909-46243176100d",
+        "nome": "Carlos",
+        "sobreNome": "Antônio",
+        "estagiariosPontuacao": []
+      }
+    ],
+    "idSquad": "55739021-c282-4869-864e-a71d8fa7274e",
+    "nome": "Squad de redes"
+  }
+]

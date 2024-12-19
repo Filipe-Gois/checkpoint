@@ -1,0 +1,6 @@
+@web_api_checkpoint_HostAddress = http://localhost:5289
+
+GET {{web_api_checkpoint_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
